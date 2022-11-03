@@ -3,8 +3,8 @@ import UserStatus from "./Detail/UserStatus";
 
 function DetailBody() {
     return(
-        <main>
-            <h2>Title is...</h2>
+        <main className="px-5" >
+            <h2 className="mt-8 text-xl" >Title is...</h2>
             <UserStatus/>
         </main>
     )
