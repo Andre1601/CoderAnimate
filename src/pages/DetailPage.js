@@ -5,7 +5,7 @@ import HeaderNotLogin from "../components/HeaderNotLogin";
 function DetailPage() {
     return (
         <>
-            <HeaderNotLogin/>
+            <HeaderLogin/>
         </>
     )
 }
