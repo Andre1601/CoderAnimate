@@ -4,10 +4,10 @@ import {GiHamburgerMenu} from "react-icons/gi"
 
 function HeaderLogin() {
     return (
-        <header className="grid grid-cols-[100px_1fr_100px] bg-[#7868E6] h-[8vh] justify-items-center items-center text-2xl text-white" >
-            <BiArrowBack/>
+        <header className="grid grid-cols-[30px_1fr_30px] px-3 bg-[#7868E6] h-[8vh] justify-items-center items-center text-2xl text-white" >
+            <BiArrowBack className="cursor-pointer" />
             <h1>CoderAnimate</h1>   
-            <GiHamburgerMenu/>
+            <GiHamburgerMenu className="cursor-pointer" />
         </header>
     )
 }
