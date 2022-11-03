@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+import DetailPage from "./pages/DetailPage";
 
 function App() {
-  return(
-    <p>Hello</p>
-  )
+  return (
+    <>
+      <DetailPage />
+    </>
+  );
 }
 
 export default App;
