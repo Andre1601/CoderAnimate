@@ -16,6 +16,7 @@ function DetailBody() {
       <CodeEditor />
       <OutputDisplay />
       <Description/>
+      <button className="hidden sm:block bg-[#7868E6] px-9 py-2 mb-10 text-white rounded-2xl" >Back</button>
     </main>
   );
 }
