@@ -1,5 +1,5 @@
 import React from "react";
-import CodeEditor from "./Detail/CodeEditer";
+import CodeEditor from "./Detail/CodeEditor";
 import Description from "./Detail/Description";
 import OutputDisplay from "./Detail/OutputDisplay";
 import Theme from "./Detail/Theme";
