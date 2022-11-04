@@ -4,12 +4,12 @@ import HeaderLogin from "../components/HeaderLogin";
 import HeaderNotLogin from "../components/HeaderNotLogin";
 
 function DetailPage() {
-    return (
-        <>
-            <HeaderLogin/>
-            <DetailBody/>
-        </>
-    )
+  return (
+    <>
+      <HeaderLogin />
+      <DetailBody />
+    </>
+  );
 }
 
 export default DetailPage;
