@@ -3,7 +3,7 @@ import {BsFillHeartFill} from "react-icons/bs";
 
 function UserStatus() {
   return (
-    <div className="grid grid-cols-[70px_1fr_40px] mt-3 " >
+    <div className="grid grid-cols-[70px_1fr_50px] mt-3 " >
       <div className="w-12 h-12 bg-orange-500 rounded-full" ></div>
       <div>
         <h3>Alex</h3>
