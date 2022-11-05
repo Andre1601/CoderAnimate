@@ -1,6 +1,9 @@
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
+import EditProfile from "./Setting/EditProfile";
 import General from "./Setting/General";
+import Password from "./Setting/Password";
+import SocialProfiles from "./Setting/SocialProfiles";
 
 function AccountSettingBody() {
   return (
@@ -17,9 +20,9 @@ function AccountSettingBody() {
         <h2 className="leading-none">General</h2>
         <BsChevronDown />
       </button>
-      <General/>
-      <button className="bg-[#7868E6] px-5 py-2 my-10 text-white rounded-xl float-right sm:col-span-2">Save Changes</button>
-    </main>  
+      <Password/>
+      <button className="bg-[#7868E6] px-5 py-2 my-10 text-white rounded-xl float-right sm:col-span-2 ">Save Changes</button>
+    </main>   
   );
 }
 
