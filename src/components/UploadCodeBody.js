@@ -6,7 +6,7 @@ import Toggle from "./Detail/Toggle";
 
 function UploadCodeBody() {
     return (
-        <main className="px-5 sm:px-10">
+        <main className="px-5 sm:px-10 md:px-28 lg:px-52">
             <h2 className="text-center mt-10 text-xl font-bold">Upload your source code</h2>
             <Toggle/>
             <Theme/>

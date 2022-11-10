@@ -17,7 +17,7 @@ function Theme() {
           ))}
         </div>
       </button>
-    </div>
+    </div> 
   );
 }
 
