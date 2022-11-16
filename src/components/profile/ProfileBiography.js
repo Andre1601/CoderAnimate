@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import {CiLocationOn} from 'react-icons/ci'
 import {RiFolderUserFill} from 'react-icons/ri'

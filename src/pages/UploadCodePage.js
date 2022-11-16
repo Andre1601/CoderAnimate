@@ -1,11 +1,11 @@
 import React from "react";
-import HeaderNotLogin from "../components/HeaderNotLogin";
+import HeaderLogin from "../components/HeaderLogin";
 import UploadCodeBody from "../components/UploadCodeBody";
 
 function UploadCodePage() {
   return (
     <>
-      <HeaderNotLogin />
+      <HeaderLogin />
       <UploadCodeBody />
     </>
   );

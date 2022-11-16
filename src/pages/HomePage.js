@@ -1,12 +1,11 @@
 import React from "react";
-import { BsSearch } from "react-icons/bs";
-import HeaderNotLogin from "../components/HeaderNotLogin";
+import HeaderLogin from "../components/HeaderLogin";
 import Contents from "../components/Contents";
 
-function HomeNotLogin() {
+function HomePage() {
   return (
     <>
-      <HeaderNotLogin />
+      <HeaderLogin />
       <main>
         <div class="flex flex-col mx-auto py-20 bg-[#B8B5FF] ">
           <div class="w-full px-4">
@@ -19,22 +18,16 @@ function HomeNotLogin() {
               thousands of designs here
             </h2>
           </div>
-          <form action="" class=" relative w-max mx-auto pt-5">
+          <form action="" class=" flex  w-full mx-auto pt-5 justify-center">
             <input
               type="search"
               name="search"
               id="search"
-              placeholder="s"
-              class="relative bg-white rounded-full border cursor-pointer outline-none pl-60 h-20"
-            ></input>
-            <div class="absolute inset-y-11 inset-x-8 font-semibold text-xl">
-              <p>Search...</p>
-            </div>
-            <div class="absolute inset-y-[53px] inset-x-[380px]">
-              <BsSearch />
-            </div>
+              placeholder="Search"
+              class=" rounded-full border cursor-pointer w-4/5 outline-none p-4 md:max-w-md "
+            />
           </form>
-          <div class="py-3 mx-auto flex">
+          <div class="flex flex-col sm:flex-row py-3 mx-auto">
             <h2 id="latest_search" class="px-4 py-2 font-medium">
               Latest Search
             </h2>
@@ -70,4 +63,4 @@ function HomeNotLogin() {
   );
 }
 
-export default HomeNotLogin;
+export default HomePage;
