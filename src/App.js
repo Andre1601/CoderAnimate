@@ -11,6 +11,7 @@ import UploadCodePage from "./pages/UploadCodePage";
 import UploadPage from "./pages/UploadPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProfileAboutPage from "./pages/ProfileAboutPage";
+import FooterPage from "./components/FooterPage";
 function App() {
   return (
     <>

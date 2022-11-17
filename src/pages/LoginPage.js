@@ -8,7 +8,7 @@ function LoginPage() {
     <>
       <div className="grid md:grid-cols-2">
         <div className="flex flex-col">
-          <HeaderLoginPage />
+          <HeaderLoginPage  />
           <LoginBody />
         </div>
         <div className="hidden md:block">

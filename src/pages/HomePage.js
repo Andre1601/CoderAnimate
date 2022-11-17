@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderLogin from "../components/HeaderLogin";
 import Contents from "../components/Contents";
+import FooterPage from "../components/FooterPage";
 
 function HomePage() {
   return (
@@ -24,7 +25,7 @@ function HomePage() {
               name="search"
               id="search"
               placeholder="Search"
-              class=" rounded-full border cursor-pointer w-4/5 outline-none p-4 md:max-w-md "
+              class=" rounded-full  bg-[#EDEEF7] border cursor-pointer w-4/5 outline-none p-4 md:max-w-md "
             />
           </form>
           <div class="flex flex-col sm:flex-row py-3 mx-auto">
@@ -59,6 +60,7 @@ function HomePage() {
           <Contents />
         </div>
       </main>
+      <FooterPage/>
     </>
   );
 }

@@ -8,7 +8,7 @@ import SocialProfiles from "./Setting/SocialProfiles";
 function AccountSettingBody() {
   return (
     <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777] ">
-      <h2 className="hidden sm:block col-span-2 text-4xl my-16 font-semibold" >General</h2>
+      <h2 className="hidden sm:block col-span-2 text-4xl my-16 font-semibold" >Password</h2>
       <div className="hidden sm:flex flex-col" >
         <a tabIndex='0' className="cursor-pointer py-2 focus:font-semibold ">General</a>
         <a tabIndex='0' className="cursor-pointer py-2 focus:font-semibold">Edit Profile</a>
