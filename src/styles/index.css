@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.drawer{
+ position: fixed;
+ top: -100%;
+ transition: 1s;
+}
