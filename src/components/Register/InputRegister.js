@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from  "react-router-dom";
 function InputRegister() {
     return(
         <>
@@ -8,7 +9,7 @@ function InputRegister() {
                 </div>
                 <div  className="flex mb-5">
                 <span>Already A Member ?</span>
-                <a className="ml-3 text-blue-500" href="#">Sign In</a>
+                <Link to="/login" className="ml-3 text-blue-500" href="#">Sign In</Link>
             </div>
               <form action="#">
                 <div className="grid grid-cols-2 gap-5  ">

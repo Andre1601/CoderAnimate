@@ -11,7 +11,7 @@ function Theme() {
       <button data-dropdown-toggle="dropdown" className="flex bg-[#7868E6] text-white px-2 text-xs  rounded items-center relative">
         <BsChevronDown className="mr-1" />
         <h3>dracula</h3>
-        <div id="dropdown" className="hidden grid grid-rows-5 gap-1 w-full absolute left-0 top-[110%] border-solid border-2 border-[#7868E6] text-black">
+        <div id="dropdown" className="hidden  grid-rows-5 gap-1 w-full absolute left-0 top-[110%] border-solid border-2 border-[#7868E6] text-black">
           {themeItem.map((theme) => (
             <button className="hover:bg-[#7868E6] focus:bg-[#7868E6] focus:text-white py-1" >{theme}</button>
           ))}
