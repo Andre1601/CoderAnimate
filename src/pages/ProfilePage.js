@@ -5,13 +5,15 @@ import FooterPage from "../components/FooterPage";
 
 function ProfilePage() {
     return (
-        <div>
+      <>
+        <div className=" h-screen">
         <HeaderLogin/>
-          <div className="w-full ">
+          <div className="w-full">
             <ProfileBody/>
           </div>
-        <FooterPage/>
         </div>
+        <FooterPage/>
+      </>
     )
 }
 export default ProfilePage;

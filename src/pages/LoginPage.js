@@ -6,18 +6,18 @@ import FooterPage from "../components/FooterPage";
 
 function LoginPage() {
   return (
-    <div className="w-full h-full overflow-hidden">
-      <HeaderLoginPage  />
-      <div className="flex h-screen">
-        <div className="flex flex-col m-auto">
+    <>
+      <HeaderLoginPage/>
+      <div className="flex w-full h-full">
+        <div className="flex  flex-col m-auto  ">
           <LoginBody />
         </div>
         <div className="hidden w-1/2 md:block">
-          <img src={LoginImage} className="w-full object-cover h-[765px]  mx-auto my-auto"  alt="login image"/>
+          <img src={LoginImage} className="w-full object-cover h-[650px]  mx-auto my-auto"  alt="login image"/>
         </div>
       </div>
         <FooterPage/>
-    </div>
+    </>
   );
 }
 

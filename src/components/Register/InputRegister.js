@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from  "react-router-dom";
 function InputRegister() {
     return(
-        <>
+        <div className="mx-5">
             <div>
                 <p className="text-1xl mb-5" >START FOR FREE</p>
                 <h1 className="text-4xl mb-5 font-bold">Create New Account</h1>
@@ -26,7 +26,7 @@ function InputRegister() {
                     <button className="w-full bg-purple-700 text-center py-1 text-white rounded-md" type="submit">Register</button>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 
