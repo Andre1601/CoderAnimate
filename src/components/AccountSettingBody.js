@@ -10,6 +10,7 @@ function AccountSettingBody({ selected, setSelected }) {
     { name: "Password", path: "password" },
     { name: "Social Profiles", path: "social" },
   ];
+  
 
   return (
     <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777] ">
