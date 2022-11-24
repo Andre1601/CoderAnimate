@@ -28,10 +28,11 @@ function HomePage() {
               className=" rounded-full  bg-[#EDEEF7] border cursor-pointer w-4/5 outline-none p-4 md:max-w-md text-lg "
             />
           </form>
-          <div className="flex flex-col sm:flex-row py-3 mx-auto">
+          <div className="flex py-3 mx-auto ">
             <h2 id="latest_search" className="px-4 py-2 font-medium">
               Latest Search
             </h2>
+            <div className="flex flex-wrap justify-start">
             <div className="px-2 py-1">
               <button className="text-base bg-white px-3 rounded-full ">
                 <div className="px-4 py-1">css</div>
@@ -51,6 +52,7 @@ function HomePage() {
               <button className="text-base bg-white px-3 rounded-full ">
                 <div className="px-4 py-1">button</div>
               </button>
+            </div>
             </div>
           </div>
         </div>
