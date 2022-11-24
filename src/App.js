@@ -27,6 +27,7 @@ function App() {
         <Route path="/upload" element={<UploadPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/profileAbout" element={<ProfileAboutPage/>}/>
+        <Route path='/setting' element={<AccountSettingPage/>}/>
       </Routes>
     </>
   );

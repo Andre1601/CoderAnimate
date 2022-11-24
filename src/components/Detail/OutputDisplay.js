@@ -1,10 +1,19 @@
 import React from "react";
 
-function OutputDisplay() {
-    return(
-        <div className="bg-orange-500 mt-3 h-56 "></div>
-    )
+function OutputDisplay({srcDoc}) {
+  return (
+    <div className="bg-white mt-28 h-96 border-solid border-2 border-[#A5A5A5]">
+      <iframe
+        id="my_iframe"
+        srcDoc={srcDoc}
+        title="output"
+        sandbox="allow-scripts"
+        frameBorder="1"
+        width="100%"
+        height="100%"
+      />
+    </div>
+  );
 }
-
 
 export default OutputDisplay;

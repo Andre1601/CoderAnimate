@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.drawer{
- position: fixed;
- top: -100%;
- transition: 1s;
+input[type="radio"]:checked + label {
+  @apply bg-black;
+}
+
+.drawer {
+  position: fixed;
+  top: -100%;
+  transition: 1s;
 }
