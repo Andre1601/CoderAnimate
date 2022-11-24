@@ -8,7 +8,7 @@ function UploadCodePage() {
     <>
       <HeaderLogin />
       <UploadCodeBody />
-      <FooterPage/>
+      <FooterPage />
     </>
   );
 }
