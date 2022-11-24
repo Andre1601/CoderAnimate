@@ -9,26 +9,23 @@ import SocialProfiles from "./Setting/SocialProfiles";
 
 function AccountSettingBody({ selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
-  const options = ["General", "Edit Profile", "Password", "Social Profiles"];
+  const options = [
+    { name: "General", path: "general" },
+    { name: "Edit Profile", path: "edit" },
+    { name: "Password", path: "password" },
+    { name: "Social Profiles", path: "social" },
+  ];
 
   return (
     <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777] ">
       <h2 className="hidden sm:block col-span-2 text-4xl my-16 font-semibold">
-        Password
+        {selected}
       </h2>
       <div className="hidden sm:flex flex-col">
-        <a tabIndex="0" className="cursor-pointer py-2 focus:font-semibold ">
-          General
-        </a>
-        <a tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">
-          Edit Profile
-        </a>
-        <a tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">
-          Password
-        </a>
-        <a tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">
-          Social Profiles
-        </a>
+        <Link to='general' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">General</Link>
+        <Link to='edit' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Edit Profile</Link>
+        <Link to='password' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Password</Link>
+        <Link to='social' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Social Profiles</Link>
       </div>
 
       <button
@@ -44,27 +41,26 @@ function AccountSettingBody({ selected, setSelected }) {
             <div
               className="top-[110%] p-[15px] border-[#A5A5A5] rounded-lg"
               onClick={(e) => {
-                setSelected(option);
+                setSelected(option.name);
                 setIsActive(false);
               }}
             >
               <div>
                 <Link
-                  to={option}
+                  to={option.path}
                   className="py-2 hover:bg-slate-50 rounded-md duration-200 cursor-pointer"
                 >
-                  {option}
+                  {option.name}
                 </Link>
               </div>
             </div>
           ))}
         </div>
       )}
-      <Password />
+      <Outlet />
       <button className="bg-[#7868E6] px-5 py-2 my-10 text-white rounded-xl float-right sm:col-span-2 ">
         Save Changes
       </button>
-      <Outlet />
     </main>
   );
 }

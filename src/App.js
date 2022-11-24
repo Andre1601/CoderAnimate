@@ -11,6 +11,10 @@ import UploadCodePage from "./pages/UploadCodePage";
 import UploadPage from "./pages/UploadPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProfileAboutPage from "./pages/ProfileAboutPage";
+import General from "./components/Setting/General";
+import EditProfile from "./components/Setting/EditProfile";
+import Password from "./components/Setting/Password";
+import SocialProfiles from "./components/Setting/SocialProfiles";
 
 function App() {
   return (
@@ -26,7 +30,13 @@ function App() {
         <Route path="/upload" element={<UploadPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/profileAbout" element={<ProfileAboutPage/>}/>
-        <Route path='/setting' element={<AccountSettingPage/>}/>
+        <Route path='/setting' element={<AccountSettingPage/>}>
+          <Route index element={<General/>} />
+          <Route path="general" element={<General/>} />
+          <Route path="edit" element={<EditProfile/>} />
+          <Route path="password" element={<Password/>} />
+          <Route path="social" element={<SocialProfiles/>} />
+        </Route>
       </Routes>
   );
 }
