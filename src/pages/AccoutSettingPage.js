@@ -5,6 +5,8 @@ import HeaderLogin from "../components/HeaderLogin";
 function AccountSettingPage() {
   const [selected, setSelected] = useState("General");
 
+  // console.log(selected);
+
   // useEffect(() => {
 
   // }, [input]);

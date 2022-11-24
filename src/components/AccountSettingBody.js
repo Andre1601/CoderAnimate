@@ -1,11 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
-import EditProfile from "./Setting/EditProfile";
-import General from "./Setting/General";
-import Password from "./Setting/Password";
-import SocialProfiles from "./Setting/SocialProfiles";
 
 function AccountSettingBody({ selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
@@ -22,10 +17,46 @@ function AccountSettingBody({ selected, setSelected }) {
         {selected}
       </h2>
       <div className="hidden sm:flex flex-col">
-        <Link to='general' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">General</Link>
-        <Link to='edit' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Edit Profile</Link>
-        <Link to='password' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Password</Link>
-        <Link to='social' tabIndex="0" className="cursor-pointer py-2 focus:font-semibold">Social Profiles</Link>
+        <Link
+          to="general"
+          tabIndex="0"
+          className="cursor-pointer py-2 focus:font-semibold"
+          onClick={(e) => {
+            setSelected('General');
+          }}
+        >
+          General
+        </Link>
+        <Link
+          to="edit"
+          tabIndex="0"
+          className="cursor-pointer py-2 focus:font-semibold"
+          onClick={(e) => {
+            setSelected('Edit Profile');
+          }}
+        >
+          Edit Profile
+        </Link>
+        <Link
+          to="password"
+          tabIndex="0"
+          className="cursor-pointer py-2 focus:font-semibold"
+                    onClick={(e) => {
+            setSelected('Password');
+          }}
+        >
+          Password
+        </Link>
+        <Link
+          to="social"
+          tabIndex="0"
+          className="cursor-pointer py-2 focus:font-semibold"
+          onClick={(e) => {
+            setSelected('Social Profiles');
+          }}
+        >
+          Social Profiles
+        </Link>
       </div>
 
       <button
