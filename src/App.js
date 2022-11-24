@@ -11,10 +11,9 @@ import UploadCodePage from "./pages/UploadCodePage";
 import UploadPage from "./pages/UploadPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProfileAboutPage from "./pages/ProfileAboutPage";
-import FooterPage from "./components/FooterPage";
+
 function App() {
   return (
-    <>
       <Routes>
         <Route path="/register" element={<RegisterPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
@@ -29,7 +28,6 @@ function App() {
         <Route path="/profileAbout" element={<ProfileAboutPage/>}/>
         <Route path='/setting' element={<AccountSettingPage/>}/>
       </Routes>
-    </>
   );
 }
 

@@ -11,3 +11,7 @@ input[type="radio"]:checked + label {
   top: -100%;
   transition: 1s;
 }
+.title_post:hover{
+    opacity: 1;
+
+}
