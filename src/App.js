@@ -15,6 +15,7 @@ import General from "./components/Setting/General";
 import EditProfile from "./components/Setting/EditProfile";
 import Password from "./components/Setting/Password";
 import SocialProfiles from "./components/Setting/SocialProfiles";
+import ProfilePost from '../src/components/profile/ProfilePost';
 
 function App() {
   return (
@@ -28,8 +29,10 @@ function App() {
         <Route path="/search" element={<SearchPage/>}/>
         <Route path="/uploadcode" element={<UploadCodePage/>}/>
         <Route path="/upload" element={<UploadPage/>}/>
-        <Route path="/profile" element={<ProfilePage/>}/>
-        <Route path="/profileAbout" element={<ProfileAboutPage/>}/>
+        <Route path="/profile" element={<ProfilePage/>}>
+          <Route path="/profile" element={<ProfilePost/>}/>
+          <Route path="/profile/about" element={<ProfileAboutPage/>}/>
+        </Route>
         <Route path='/setting' element={<AccountSettingPage/>}>
           <Route index element={<General/>} />
           <Route path="general" element={<General/>} />
