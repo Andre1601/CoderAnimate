@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderLogin from "../components/HeaderLogin";
 import ProfileBody from "../components/ProfileBody";
 import FooterPage from "../components/FooterPage";
@@ -6,7 +5,7 @@ import FooterPage from "../components/FooterPage";
 function ProfilePage() {
     return (
       <>
-        <div className=" h-screen">
+        <div className=" h-full">
         <HeaderLogin/>
           <div className="w-full">
             <ProfileBody/>
