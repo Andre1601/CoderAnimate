@@ -1,6 +1,6 @@
 import React from "react";
-import UploadImage from "./Upload/UploadImage";
 import {Link} from "react-router-dom";
+import UploadImage from "./Upload/UploadImage";
 
 function UploadBody() {
     return (

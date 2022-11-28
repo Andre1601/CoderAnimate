@@ -1,13 +1,82 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function UserProfile() {
+  const [image, setImage] = useState();
+  const [preview, setPreview] = useState();
+  const fileInputRef = useRef();
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else {
+      setPreview(null);
+    }
+  }, [image]);
+
   return (
-    <div className="grid grid-cols-[50px_1fr] gap-x-5">
-      <div className="row-span-3 w-14 h-14 bg-orange-500 rounded-full"></div>
-      <label htmlFor="image_uploads" className="w-fit">Choose Image</label>
-      <input id="image_uploads" type="file" className="hidden bg-orange-500 w-min" />
-      <button className="bg-[#7868E6] text-white rounded-xl w-[120px] mt-3 py-2">Upload Now</button>
-    </div>
+    <>
+      <label className="w-fit">
+        {preview ? (
+          <div className="grid grid-cols-[70px_1fr] gap-5">
+            <img
+              src={preview}
+              className="w-16 h-16 bg-orange-500 rounded-full"
+              alt=""
+              onClick={() => {
+                setImage(null);
+              }}
+            />
+            <button
+              className="bg-[#7868E6] text-white rounded-xl w-[120px] h-11 mt-3 py-2"
+              onClick={(event) => {
+                event.preventDefault();
+                fileInputRef.current.click();
+              }}
+            >
+              Upload Now
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-[60px_1fr] gap-5">
+            <img
+              src={preview}
+              className="w-16 h-16 bg-orange-500 rounded-full"
+              alt=""
+              onClick={() => {
+                setImage(null);
+              }}
+            />
+            <button
+              className="bg-[#7868E6] text-white rounded-xl w-[120px] h-11 mt-3 py-2"
+              onClick={(event) => {
+                event.preventDefault();
+                fileInputRef.current.click();
+              }}
+            >
+              Select Avatar
+            </button>
+          </div>
+        )}
+        <input
+          type="file"
+          className="hidden"
+          ref={fileInputRef}
+          accept="image/*"
+          onChange={(event) => {
+            const file = event.target.files[0];
+            if (file && file.type.slice(0, 5) === "image") {
+              setImage(file);
+            } else {
+              setImage(null);
+            }
+          }}
+        />
+      </label>
+    </>
   );
 }
 

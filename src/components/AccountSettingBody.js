@@ -10,7 +10,6 @@ function AccountSettingBody({ selected, setSelected }) {
     { name: "Password", path: "password" },
     { name: "Social Profiles", path: "social" },
   ];
-  
 
   return (
     <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777] ">
@@ -23,7 +22,7 @@ function AccountSettingBody({ selected, setSelected }) {
           tabIndex="0"
           className="cursor-pointer py-2 focus:font-semibold"
           onClick={(e) => {
-            setSelected('General');
+            setSelected("General");
           }}
         >
           General
@@ -33,7 +32,7 @@ function AccountSettingBody({ selected, setSelected }) {
           tabIndex="0"
           className="cursor-pointer py-2 focus:font-semibold"
           onClick={(e) => {
-            setSelected('Edit Profile');
+            setSelected("Edit Profile");
           }}
         >
           Edit Profile
@@ -42,8 +41,8 @@ function AccountSettingBody({ selected, setSelected }) {
           to="password"
           tabIndex="0"
           className="cursor-pointer py-2 focus:font-semibold"
-                    onClick={(e) => {
-            setSelected('Password');
+          onClick={(e) => {
+            setSelected("Password");
           }}
         >
           Password
@@ -53,7 +52,7 @@ function AccountSettingBody({ selected, setSelected }) {
           tabIndex="0"
           className="cursor-pointer py-2 focus:font-semibold"
           onClick={(e) => {
-            setSelected('Social Profiles');
+            setSelected("Social Profiles");
           }}
         >
           Social Profiles
@@ -71,6 +70,7 @@ function AccountSettingBody({ selected, setSelected }) {
         <div>
           {options.map((option) => (
             <div
+              key={option.path.toString()}
               className="top-[110%] p-[15px] border-[#A5A5A5] rounded-lg"
               onClick={(e) => {
                 setSelected(option.name);
@@ -79,6 +79,7 @@ function AccountSettingBody({ selected, setSelected }) {
             >
               <div>
                 <Link
+                  key={option.path.toString()}
                   to={option.path}
                   className="py-2 hover:bg-slate-50 rounded-md duration-200 cursor-pointer"
                 >
