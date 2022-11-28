@@ -12,9 +12,9 @@ function ProfileSocial() {
 
             <div className="Follow mt-5">
                 <div className="bg-black align-center w-full md:w-96 md:mt-10 h-px "></div>
-                <div className="m-auto md:mr-10">
+                <div className=" flex justify-center  md:mr-10">
                     <span  className="max-w-lg m-auto ml-10 sm:ml-10">Followers <p>(99)</p></span>
-                    <span className="max-w-lg ml-6 sm:ml-10">Following<p>(99)</p></span>
+                    <span className="max-w-lg ml-6 m-auto sm:ml-10">Following<p>(99)</p></span>
                 </div>
             </div>
         </div>

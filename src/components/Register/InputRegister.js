@@ -13,14 +13,14 @@ function InputRegister() {
             </div>
               <form action="#">
                 <div className="grid grid-cols-2 gap-5  ">
-                    <input type={"text"} placeholder="Name" className="border border-gray-500 py-1 px-4 rounded-md"/>
-                    <input type={"text"} placeholder="Username" className="border border-gray-500 py-1 px-4 rounded-md"/>
+                    <input type={"text"} placeholder="Name" className="border border-gray-500 py-1 px-4 rounded-md" required/>
+                    <input type={"text"} placeholder="Username" className="border border-gray-500 py-1 px-4 rounded-md" required/>
                 </div>
                 <div className="mt-5">
-                    <input type={"email"} placeholder="Enter your email" className="border border-gray-500 py-1 px-4 w-full rounded-md"/>
+                    <input type={"email"} placeholder="Enter your email" className="border border-gray-500 py-1 px-4 w-full rounded-md" required/>
                 </div>
                 <div className="mt-5">
-                    <input type={"password"} placeholder="Password" className="border border-gray-500 py-1 px-4 w-full rounded-md"/>
+                    <input type={"password"} placeholder="Password" className="border border-gray-500 py-1 px-4 w-full rounded-md" required/>
                 </div>
                 <div className="mt-5">
                     <button className="w-full bg-purple-700 text-center py-1 text-white rounded-md" type="submit">Register</button>
