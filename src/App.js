@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import SearchPage from './pages/SearchPage';
+import SearchPage from "./pages/SearchPage";
 import AccountSettingPage from "./pages/AccoutSettingPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import DetailPage from "./pages/DetailPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import HomePage from "./pages/HomePage";
+import HomePages from "./pages/HomePages";
 import UploadCodePage from "./pages/UploadCodePage";
 import UploadPage from "./pages/UploadPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -15,32 +15,73 @@ import General from "./components/Setting/General";
 import EditProfile from "./components/Setting/EditProfile";
 import Password from "./components/Setting/Password";
 import SocialProfiles from "./components/Setting/SocialProfiles";
-import ProfilePost from '../src/components/profile/ProfilePost';
+import ProfilePost from "../src/components/profile/ProfilePost";
+import { getUserLogged, putAccessToken } from "./utils/network-data";
 
 function App() {
+  const [authedUser, setAuthedUser] = useState(null);
+  const [initializing, setInitializing] = useState(true);
+
+  React.useEffect(() => {
+    async function getUser() {
+      const { data } = await getUserLogged();
+      setAuthedUser(data);
+      setInitializing(false);
+    }
+
+    getUser();
+  }, []);
+
+  async function onLoginSuccess({ accessToken}) {
+    putAccessToken(accessToken);
+    const { data } = await getUserLogged();
+    setAuthedUser(data);
+  }
+
+  function onLogout() {
+    setAuthedUser(null);
+    putAccessToken("");
+  }
+
+  if (initializing) {
+    return null;
+  }
+
+  if (authedUser === null) {
+    return (
+      <>
+        <Routes>
+          <Route
+            path="/*"
+            element={<LoginPage loginSuccess={onLoginSuccess} />}
+          />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </>
+    );
+  }
+  
   return (
-      <Routes>
-        <Route path="/register" element={<RegisterPage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/accountsetting" element={<AccountSettingPage/>}/>
-        <Route path="/detail" element={<DetailPage/>}/>
-        <Route path="/search" element={<SearchPage/>}/>
-        <Route path="/uploadcode" element={<UploadCodePage/>}/>
-        <Route path="/upload" element={<UploadPage/>}/>
-        <Route path="/profile" element={<ProfilePage/>}>
-          <Route path="/profile" element={<ProfilePost/>}/>
-          <Route path="/profile/about" element={<ProfileAboutPage/>}/>
-        </Route>
-        <Route path='/setting' element={<AccountSettingPage/>}>
-          <Route index element={<General/>} />
-          <Route path="general" element={<General/>} />
-          <Route path="edit" element={<EditProfile/>} />
-          <Route path="password" element={<Password/>} />
-          <Route path="social" element={<SocialProfiles/>} />
-        </Route>
-      </Routes>
+    <Routes>
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/*" element={<HomePages />} />
+      <Route path="/accountsetting" element={<AccountSettingPage />} />
+      <Route path="/detail" element={<DetailPage />} />
+      <Route path="/search" element={<SearchPage />} />
+      <Route path="/uploadcode" element={<UploadCodePage />} />
+      <Route path="/upload" element={<UploadPage />} />
+      <Route path="/profile" element={<ProfilePage />}>
+        <Route path="/profile" element={<ProfilePost />} />
+        <Route path="/profile/about" element={<ProfileAboutPage />} />
+      </Route>
+      <Route path="/setting" element={<AccountSettingPage />}>
+        <Route index element={<General />} />
+        <Route path="general" element={<General />} />
+        <Route path="edit" element={<EditProfile />} />
+        <Route path="password" element={<Password />} />
+        <Route path="social" element={<SocialProfiles />} />
+      </Route>
+    </Routes>
   );
 }
 

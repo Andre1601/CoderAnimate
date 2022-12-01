@@ -16,7 +16,7 @@ function Contents() {
             <img
               src="https://source.unsplash.com/600x400"
               alt="image caption"
-              className="w-auto rounded-b-2xl cursor-pointer"
+              className="w-auto rounded-b-2xl cursor-pointer h"
             />
         </div>
           <div className="px-1 py-4 mx-auto flex justify-between ">

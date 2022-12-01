@@ -1,17 +1,36 @@
 import React from "react";
+import { useState } from "react";
 import {Link} from "react-router-dom";
 
-function InputLogin() {
+function InputLogin({login}) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function onEmailChangeHandler(e) {
+    setEmail(e.target.value);
+  }
+
+  function onPasswordChangeHandler(e) {
+    setPassword(e.target.value);
+  }
+
+  function onSubmitHandler(e) {
+    e.preventDefault();
+
+    login({email, password});
+  }
+
   return (
     <>
-      <form action="">
+      <form action="" onSubmit={onSubmitHandler}>
         <div className="flex flex-col my-8">
           <label className="font-bold">Email</label>
-          <input className="border-2 border-gray-300 rounded-md p-2" />
+          <input className="border-2 border-gray-300 rounded-md p-2" onChange={onEmailChangeHandler} />
         </div>
         <div className="flex flex-col my-8">
           <label className="font-bold">Password</label>
-          <input className="border-2 border-gray-300 rounded-md p-2" />
+          <input className="border-2 border-gray-300 rounded-md p-2" onChange={onPasswordChangeHandler}/>
         </div>
         <div className="flex flex-col my-8 items-end">
           <a className="text-purple-500 mb-2 font-semibold">Forgot Password?</a>
