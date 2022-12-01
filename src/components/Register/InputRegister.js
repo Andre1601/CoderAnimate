@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 function InputRegister({ onSubmit }) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -48,12 +47,14 @@ function InputRegister({ onSubmit }) {
             type={"text"}
             placeholder="Name"
             className="border border-gray-500 py-1 px-4 rounded-md"
+            required
             onChange={onNameChange}
           />
           <input
             type={"text"}
             placeholder="Username"
             className="border border-gray-500 py-1 px-4 rounded-md"
+            required
             onChange={onUsernameChange}
           />
         </div>
@@ -62,6 +63,7 @@ function InputRegister({ onSubmit }) {
             type={"email"}
             placeholder="Enter your email"
             className="border border-gray-500 py-1 px-4 w-full rounded-md"
+            required
             onChange={onEmailChange}
           />
         </div>
@@ -70,6 +72,7 @@ function InputRegister({ onSubmit }) {
             type={"password"}
             placeholder="Password"
             className="border border-gray-500 py-1 px-4 w-full rounded-md"
+            required
             onChange={onPasswordChange}
           />
         </div>

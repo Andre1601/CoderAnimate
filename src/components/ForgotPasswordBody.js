@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 function ForgotPasswordBody() {
   return (
@@ -11,11 +12,11 @@ function ForgotPasswordBody() {
         <form className="mt-8">
           <div className="flex flex-col my-8">
             <label>Email</label>
-            <input className="border-2 border-gray-300 rounded-md p-2" placeholder="Enter your email address" />
+            <input className="border-2 border-gray-300 rounded-md p-2" placeholder="Enter your email address" required type={"email"} />
           </div>
           <div className="flex flex-col my-8">
             <button className="bg-purple-700 text-white font-bold rounded-md p-2 mb-4 w-full">SEND</button>
-            <p className="text-center">Did you remember your password ? <a className="text-purple-700 font-semibold" href="">Try logging in</a></p>
+            <p className="text-center">Did you remember your password ? <Link to='/login' className="text-purple-700 font-semibold" href="">Try logging in</Link></p>
           </div>
         </form>
       </main>
