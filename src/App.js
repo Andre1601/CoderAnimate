@@ -57,9 +57,9 @@ function App() {
           />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/*" element={<HomePages authedUser={authedUser} />} />
-          <Route path="/detail" element={<DetailPage />} />
+          <Route path="/detail" element={<DetailPage authedUser={authedUser} />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/profile" element={<ProfilePage />}>
+          <Route path="/profile" element={<ProfilePage authedUser={authedUser} />}>
             <Route path="/profile" element={<ProfilePost />} />
             <Route path="/profile/about" element={<ProfileAboutPage />} />
           </Route>
