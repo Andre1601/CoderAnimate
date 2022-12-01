@@ -32,7 +32,7 @@ function App() {
     getUser();
   }, []);
 
-  async function onLoginSuccess({ accessToken}) {
+  async function onLoginSuccess({ accessToken }) {
     putAccessToken(accessToken);
     const { data } = await getUserLogged();
     setAuthedUser(data);
@@ -52,19 +52,26 @@ function App() {
       <>
         <Routes>
           <Route
-            path="/*"
+            path="/login"
             element={<LoginPage loginSuccess={onLoginSuccess} />}
           />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/*" element={<HomePages authedUser={authedUser} />} />
+          <Route path="/detail" element={<DetailPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/profile" element={<ProfilePage />}>
+            <Route path="/profile" element={<ProfilePost />} />
+            <Route path="/profile/about" element={<ProfileAboutPage />} />
+          </Route>
         </Routes>
       </>
     );
   }
-  
+
   return (
     <Routes>
-      <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/*" element={<HomePages />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/accountsetting" element={<AccountSettingPage />} />
       <Route path="/detail" element={<DetailPage />} />
       <Route path="/search" element={<SearchPage />} />
