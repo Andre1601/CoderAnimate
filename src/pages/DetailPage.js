@@ -3,7 +3,17 @@ import DetailBody from "../components/DetailBody";
 import HeaderLogin from "../components/HeaderLogin";
 import HeaderNotLogin from "../components/HeaderNotLogin";
 
-function DetailPage() {
+function DetailPage({ authedUser }) {
+  
+  if (authedUser === null) {
+    return (
+      <>
+        <HeaderNotLogin />
+        <DetailBody />
+      </>
+    );
+  }
+
   return (
     <>
       <HeaderLogin />

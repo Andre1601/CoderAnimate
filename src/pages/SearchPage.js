@@ -1,10 +1,21 @@
 import React from "react";
 import HeaderLogin from "../components/HeaderLogin";
-import Contents from "../components/Contents";
-import { BsSearch } from "react-icons/bs";
 import FooterPage from "../components/FooterPage";
+import SearchPageBody from "../components/SearchPageBody";
+import HeaderNotLogin from "../components/HeaderNotLogin";
+import Contents from '../components/Contents';
 
-function SearchPage() {
+function SearchPage({ authedUser }) {
+  if (authedUser === null) {
+    return (
+      <>
+        <HeaderNotLogin />
+        <SearchPageBody />
+        <FooterPage />
+      </>
+    );
+  }
+
   return (
     <>
       <HeaderLogin />
