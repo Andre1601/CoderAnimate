@@ -30,7 +30,7 @@ function InputRegister({ onSubmit }) {
   }
 
   return (
-    <div className="mx-5">
+    <div>
       <div>
         <p className="text-1xl mb-5">START FOR FREE</p>
         <h1 className="text-4xl mb-5 font-bold">Create New Account</h1>
@@ -46,14 +46,14 @@ function InputRegister({ onSubmit }) {
           <input
             type={"text"}
             placeholder="Name"
-            className="border border-gray-500 py-1 px-4 rounded-md"
+            className="border border-gray-500 py-1 px-4 rounded-md mt-3"
             required
             onChange={onNameChange}
           />
           <input
             type={"text"}
             placeholder="Username"
-            className="border border-gray-500 py-1 px-4 rounded-md"
+            className="border border-gray-500 py-1 px-4 rounded-md mt-3"
             required
             onChange={onUsernameChange}
           />
@@ -62,7 +62,7 @@ function InputRegister({ onSubmit }) {
           <input
             type={"email"}
             placeholder="Enter your email"
-            className="border border-gray-500 py-1 px-4 w-full rounded-md"
+            className="border border-gray-500 py-1 px-4 w-full rounded-md mt-3"
             required
             onChange={onEmailChange}
           />
@@ -71,14 +71,14 @@ function InputRegister({ onSubmit }) {
           <input
             type={"password"}
             placeholder="Password"
-            className="border border-gray-500 py-1 px-4 w-full rounded-md"
+            className="border border-gray-500 py-1 px-4 w-full rounded-md mt-3"
             required
             onChange={onPasswordChange}
           />
         </div>
         <div className="mt-5">
           <button
-            className="w-full bg-purple-700 text-center py-1 text-white rounded-md"
+            className="w-full bg-purple-700 text-center py-1 text-white rounded-md mt-3"
             type="submit"
           >
             Register

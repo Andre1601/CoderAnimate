@@ -14,6 +14,7 @@ function UploadBody() {
             <input className="border-solid border-2 border-[#7868E6] rounded-lg py-1 px-3 w-full mt-6" placeholder="Add Tags..."/>
            <Link to="/uploadcode"><button className="bg-[#7868E6] px-9 py-2 my-10 text-white rounded-2xl float-right" >Continue</button></Link> 
         </main>
+        
     )
 }
 

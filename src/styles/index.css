@@ -15,3 +15,37 @@ input[type="radio"]:checked + label {
     opacity: 1;
 
 }
+
+@media screen and (max-width: 279px) {
+  .card {
+    width: 270px;
+  }
+}
+
+@media screen and (min-width: 539px) {
+  .card {
+    width: 375px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .card {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 911px) {
+  .card {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 325px;
+  }
+}
+@media screen and (min-width: 1270px) {
+  .card {
+    width: 400px;
+  }
+}
+

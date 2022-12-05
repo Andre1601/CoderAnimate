@@ -4,7 +4,7 @@ import Search from "./Home/Search";
 
 function JumbotronHome() {
   return (
-    <div className="flex justify-center bg-[#B8B5FF] py-10 px-3">
+    <div className="jumbroton flex items-center justify-center w-full bg-[#B8B5FF] py-10 px-3">
       <div className="w-full sm:w-4/5 md:w-3/5 xl:w-1/2">
         <h1 className="text-[25px] font-bold text-center">
           The place where all the css animation <br></br> designs in the world

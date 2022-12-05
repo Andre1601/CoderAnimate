@@ -5,11 +5,11 @@ import FooterPage from "../components/FooterPage";
 
 function UploadPage() {
     return (
-        <>
+        <div>
             <HeaderLogin/>
             <UploadBody/>
             <FooterPage/>
-        </>
+        </div>
     )
 }
 

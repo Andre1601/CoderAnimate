@@ -4,8 +4,8 @@ import Thumbnail from "./Card/Thumbnail";
 
 function CardItem() {
   return (
-    <div className="w-72 h-full rounded-2xl overflow-hidden shadow-lg mx-auto sm:mx-0">
-        <Thumbnail/>
+    <div className="card w-[350px] h-full rounded-2xl overflow-hidden shadow-lg mx-auto ">
+        <Thumbnail/> 
         <Detail/>
     </div>
   );

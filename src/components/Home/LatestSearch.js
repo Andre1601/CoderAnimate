@@ -3,9 +3,9 @@ import ItemSearch from "./ItemSearch";
 
 function LatestSearch() {
   return (
-    <div className="flex flex-col sm:flex-row items-center mt-7">
-      <h2 className="mr-3 mb-3 sm:mb-0">Latest Search</h2>
-      <div>
+    <div className="flex flex-col sm:flex-row items-center justify-center ">
+      <h2 className="mx-4 mt-4">Latest Search</h2>
+      <div className="flex flex-wrap justify-center">
         <ItemSearch />
         <ItemSearch />
         <ItemSearch />

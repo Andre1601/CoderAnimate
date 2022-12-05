@@ -14,22 +14,21 @@ function LoginPage({ loginSuccess }) {
   }
 
   return (
-    <>
+    <div className="h-screen overflow-hidden">
       <HeaderLoginPage />
-      <div className="flex w-full h-full">
-        <div className="flex  flex-col m-auto  ">
+      <div className="flex">
+        <div className="flex  flex-col m-auto sm:mt-[-80px] ">
           <LoginBody login={onLogin} />
         </div>
-        <div className="hidden w-1/2 md:block">
+        <div className="hidden  w-1/2 lg:block sm:mt-[-80px] ">
           <img
             src={LoginImage}
-            className="w-full object-cover h-[650px]  mx-auto my-auto"
+            className="w-[800px] object-contain h-[600px]  mx-auto my-auto"
             alt="login image"
           />
         </div>
       </div>
-      <FooterPage />
-    </>
+    </div>
   );
 }
 
