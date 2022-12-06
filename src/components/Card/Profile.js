@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Profile() {
+function Profile({data}) {
   return (
     <Link to="/profile" className="flex items-center">
       <img
@@ -9,7 +9,7 @@ function Profile() {
         alt="Profile Avatar"
         className="w-10 h-10 rounded-full bg-gray-400 mr-2"
       />
-      <h2>Irham Kamil</h2>
+      <h2>{data.name}</h2>
     </Link>
   );
 }

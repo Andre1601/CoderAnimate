@@ -57,7 +57,7 @@ function App() {
           />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/*" element={<HomePages authedUser={authedUser} />} />
-          <Route path="/detail" element={<DetailPage authedUser={authedUser} />} />
+          <Route path="/detail/:username" element={<DetailPage authedUser={authedUser} />} />
           <Route path="/search" element={<SearchPage authedUser={authedUser} />} />
           <Route path="/profile" element={<ProfilePage authedUser={authedUser} />}>
             <Route path="/profile" element={<ProfilePost />} />
@@ -73,7 +73,7 @@ function App() {
       <Route path="/*" element={<HomePages />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/accountsetting" element={<AccountSettingPage />} />
-      <Route path="/detail" element={<DetailPage />} />
+      <Route path="/detail/:id" element={<DetailPage />} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/uploadcode" element={<UploadCodePage />} />
       <Route path="/upload" element={<UploadPage />} />

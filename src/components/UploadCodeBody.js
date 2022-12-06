@@ -8,15 +8,18 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { javascript } from "@codemirror/lang-javascript";
 
-function UploadCodeBody() {
+function UploadCodeBody({uploadHandler}) {
   const [openedEditor, setOpenedEditor] = useState("html");
 
-  const [isHtml, setHtml] = useState("");
-  const [isCss, setCss] = useState("");
-  const [isJs, setJs] = useState("");
+  const [code, setCode] = useState([]);
+
+  const [isHtml, setHtml] = useState(localStorage.getItem("html") || '' );
+  const [isCss, setCss] = useState(localStorage.getItem("css") || '');
+  const [isJs, setJs] = useState(localStorage.getItem("js") || '');
   const [srcDoc, setSrcDoc] = useState(``);
 
   const [theme, setTheme] = useState("dracula");
+  
 
   const onTabClick = (editorName) => {
     setOpenedEditor(editorName);
@@ -27,6 +30,25 @@ function UploadCodeBody() {
   };
 
   useEffect(() => {
+    setCode(() => [
+      {
+        language: "html",
+        code: isHtml,
+      },
+      {
+        language: "css",
+        code: isCss,
+      },
+      {
+        language: "js",
+        code: isJs,
+      },
+    ]);
+
+    localStorage.setItem("html", isHtml);
+    localStorage.setItem("css", isCss);
+    localStorage.setItem("js", isJs);
+
     const timeOut = setTimeout(() => {
       setSrcDoc(
         `
@@ -41,6 +63,18 @@ function UploadCodeBody() {
 
     return () => clearTimeout(timeOut);
   }, [isHtml, isCss, isJs]);
+
+
+  function onUploadHandler(e) {
+    e.preventDefault();
+    uploadHandler({ title: localStorage.getItem("title") , description: localStorage.getItem("description") , tags: localStorage.getItem("tags"), code });
+    localStorage.removeItem('title');
+    localStorage.removeItem('description');
+    localStorage.removeItem('tags');
+    localStorage.removeItem('html');
+    localStorage.removeItem('css');
+    localStorage.removeItem('js');
+  }
 
   return (
     <main className="px-5 sm:px-10 md:px-28 lg:px-52">
@@ -80,7 +114,7 @@ function UploadCodeBody() {
 
       <OutputDisplay srcDoc={srcDoc} />
 
-      <button className="bg-[#7868E6] px-9 py-2 my-10 text-white rounded-2xl float-right">
+      <button className="bg-[#7868E6] px-9 py-2 my-10 text-white rounded-2xl float-right" onClick={onUploadHandler} >
         Publish Now
       </button>
     </main>

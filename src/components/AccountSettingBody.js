@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { BsChevronDown } from "react-icons/bs";
 
-function AccountSettingBody({ selected, setSelected }) {
+function AccountSettingBody({ selected, setSelected, updateHandler }) {
   const [isActive, setIsActive] = useState(false);
   const options = [
     { name: "General", path: "general" },
@@ -91,9 +91,6 @@ function AccountSettingBody({ selected, setSelected }) {
         </div>
       )}
       <Outlet />
-      <button className="bg-[#7868E6] px-5 py-2 my-10 text-white rounded-xl float-right sm:col-span-2 ">
-        Save Changes
-      </button>
     </main>
   );
 }
