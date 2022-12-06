@@ -23,7 +23,7 @@ function CardItem({id, uid}) {
   return (
     <div className="card w-[350px] h-full rounded-2xl overflow-hidden shadow-lg mx-auto ">
         <Thumbnail detailHandler={onDetailHandler} />
-        <Detail/>
+        <Detail dataUser={dataUser} />
 
     </div>
   );

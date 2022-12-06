@@ -9,7 +9,7 @@ function Profile({data}) {
         alt="Profile Avatar"
         className="w-10 h-10 rounded-full bg-gray-400 mr-2"
       />
-      <h2>{data.name}</h2>
+      <h2>{data.name || ''}</h2>
     </Link>
   );
 }
