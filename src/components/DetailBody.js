@@ -9,9 +9,14 @@ import UserStatus from "./Detail/UserStatus";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { javascript } from "@codemirror/lang-javascript";
+import { getProject, getUser } from "../utils/network-data";
+import { useParams } from "react-router-dom";
 
 function DetailBody() {
   const [openedEditor, setOpenedEditor] = useState("html");
+
+  const [dataUser, setDataUser] = useState('');
+  const [data, setData] = useState('');
 
   const [isHtml, setHtml] = useState("");
   const [isCss, setCss] = useState("");
@@ -19,6 +24,29 @@ function DetailBody() {
   const [srcDoc, setSrcDoc] = useState(``);
 
   const [theme, setTheme] = useState("dracula");
+
+  async function getUserData(uid) {
+    const { data } = await getUser(uid);
+    setDataUser(data)
+  }
+
+  let {id} = useParams();
+
+
+  React.useEffect(() => {
+    async function getProjectData(id) {
+      const { data } = await getProject(id);
+      setHtml(data.code[0].code)
+      setCss(data.code[1].code)
+      setJs(data.code[2].code)
+      setData(data)
+      getUserData(data.uid)
+
+    }
+    getProjectData(id)
+
+  }, [])
+
 
   const onTabClick = (editorName) => {
     setOpenedEditor(editorName);
@@ -46,8 +74,8 @@ function DetailBody() {
 
   return (
     <main className="px-5 sm:px-10 ">
-      <h2 className="mt-8 text-xl sm:text-3xl">Title is...</h2>
-      <UserStatus />
+      <h2 className="mt-8 text-xl sm:text-3xl">{data.title}</h2>
+      <UserStatus data={dataUser} />
       <Toggle onToggleClick={onTabClick} />
       <Theme onChangeTheme={onThemeChange} />
 
@@ -80,7 +108,7 @@ function DetailBody() {
       </div>
 
       <OutputDisplay srcDoc={srcDoc} />
-      <Description />
+      <Description data={data} />
       <button className="hidden sm:block bg-[#7868E6] px-9 py-2 mb-10 text-white rounded-2xl">
         Back
       </button>

@@ -2,7 +2,7 @@ import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 import {Link} from 'react-router-dom';
 
-function UserStatus() {
+function UserStatus({data}) {
   return (
     <div className="grid grid-cols-[70px_1fr_90px] mt-3 ">
       <Link to="/userlain">
@@ -13,7 +13,7 @@ function UserStatus() {
               />
       </Link>
       <div>
-        <h3>Irham Kamil</h3>
+        <h3>{data.name}</h3>
         <button className="text-[#7868E6]">Follow</button>
       </div>
       <button className="flex justify-center items-center  bg-[#7868E6] h-[40px] p-3 rounded-2xl m-3 mx-auto text-white leading-[0.8]">
