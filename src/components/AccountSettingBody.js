@@ -12,7 +12,7 @@ function AccountSettingBody({ selected, setSelected, updateHandler }) {
   ];
 
   return (
-    <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777] ">
+    <main className="sm:grid sm:grid-cols-[150px_1fr] sm:gap-x-8 px-5 sm:px-10 text-[#777777]  ">
       <h2 className="hidden sm:block col-span-2 text-4xl my-16 font-semibold">
         {selected}
       </h2>

@@ -8,9 +8,9 @@ import Status from "./Status";
 function Detail({dataUser}) {
 
   return (
-    <div className="px-1 py-4 mx-auto flex justify-between items-center ">
+    <div className=" px-5 py-4 mx-auto flex justify-between items-center ">
         <Profile data={dataUser} />
-        <Status />
+        <Status/>
     </div>
   );
 }

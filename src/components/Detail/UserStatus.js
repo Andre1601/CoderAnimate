@@ -1,17 +1,24 @@
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
+import {Link} from 'react-router-dom';
 
 function UserStatus({data}) {
   return (
     <div className="grid grid-cols-[70px_1fr_90px] mt-3 ">
-      <div className="w-12 h-12 bg-orange-500 rounded-full"></div>
+      <Link to="/userlain">
+              <img
+                alt=""
+                src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png"
+                className="block w-14 h-14 rounded-full"
+              />
+      </Link>
       <div>
         <h3>{data.name}</h3>
-        <button className="text-[#7868E6] ">Follow</button>
+        <button className="text-[#7868E6]">Follow</button>
       </div>
-      <button className="flex text-base bg-[#7868E6] p-4 rounded-2xl mx-auto text-white leading-[0.8]">
-        <BsFillHeartFill />
-        <h3 className="ml-3" >Like</h3>
+      <button className="flex justify-center items-center  bg-[#7868E6] h-[40px] p-3 rounded-2xl m-3 mx-auto text-white leading-[0.8]">
+        <BsFillHeartFill className="m-2"/>
+        <h3 className="m-2" >Like</h3>
       </button>
     </div>
   );

@@ -17,11 +17,11 @@ function RegisterBody() {
 
   return (
     <>
-    <div className="flex items-center mx-auto justify-center min-h-screen overflow-hidden">
-      <div className="w-1/2 h-full hidden md:block">
-        <img src={img} className="object-contain h-[500px]  mx-auto my-auto" alt="register img"/>
+    <div className="flex items-center mx-auto">
+      <div className="w-1/2 hidden lg:block">
+        <img src={img} className="w-[450px] object-contain h-[450px]  mx-auto my-auto" alt="register img"/>
       </div>
-      <div className=" w-full justify-center max-w-[400px] lg:w-1/2 bg-white ">
+      <div className=" w-full justify-center max-w-[450px] lg:w-1/2 bg-white mx-auto p-6 ">
         <InputRegister onSubmit={onRegisterHandler} />
       </div>
     </div>

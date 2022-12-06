@@ -21,22 +21,22 @@ function InputLogin({ login }) {
   }
 
   return (
-    <>
+    <div>
       <form action="" onSubmit={onSubmitHandler}>
-        <div className="flex flex-col my-8">
+        <div className="flex flex-col my-4">
           <label className="font-bold">Email</label>
           <input
             type={"email"}
-            className="border-2 border-gray-300 rounded-md p-2"
+            className="border-2 border-gray-300 rounded-md py-1 px-4 w-full"
             required
             onChange={onEmailChangeHandler}
           />
         </div>
-        <div className="flex flex-col my-8">
+        <div className="flex flex-col my-4">
           <label className="font-bold">Password</label>
           <input
             type={"password"}
-            className="border-2 border-gray-300 rounded-md p-2"
+            className="border-2 border-gray-300 rounded-md py-1 px-4 w-full"
             required
             onChange={onPasswordChangeHandler}
           />
@@ -48,7 +48,7 @@ function InputLogin({ login }) {
           >
             Forgot Password?
           </Link>
-          <button className="bg-purple-700 text-white rounded-md p-2 w-full">
+          <button className="bg-purple-700 text-white rounded-md py-1 px-4 w-full">
             Sign In
           </button>
         </div>
@@ -62,7 +62,7 @@ function InputLogin({ login }) {
           </p>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

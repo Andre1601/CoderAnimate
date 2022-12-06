@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Profile({data}) {
   return (
-    <Link to="/profile" className="flex items-center">
+    <Link to="/userlain" className="flex items-center">
       <img
         src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png"
         alt="Profile Avatar"

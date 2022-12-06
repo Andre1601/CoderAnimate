@@ -7,8 +7,9 @@ function ProfilePage({ authedUser }) {
   if (authedUser === null) {
     return (
       <>
-        <div className=" h-full">
-          <HeaderNotLogin />
+
+        <div className="md:h-screen">
+          <HeaderLogin/>
           <div className="w-full">
             <ProfileBody />
           </div>

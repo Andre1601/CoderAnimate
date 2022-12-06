@@ -10,7 +10,7 @@ function Thumbnail({ detailHandler }) {
       <img
         src="https://source.unsplash.com/600x400"
         alt="img caption"
-        className="w-auto h-52 cursor-pointer"
+        className="w-full h-52 cursor-pointer"
       />
     </div>
   );

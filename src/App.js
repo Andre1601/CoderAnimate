@@ -16,6 +16,7 @@ import EditProfile from "./components/Setting/EditProfile";
 import Password from "./components/Setting/Password";
 import SocialProfiles from "./components/Setting/SocialProfiles";
 import ProfilePost from "../src/components/profile/ProfilePost";
+import ProfileUserLainPage from "./pages/ProfileUserLainPage";
 import { getUserLogged, putAccessToken } from "./utils/network-data";
 
 function App() {
@@ -75,13 +76,14 @@ function App() {
       <Route path="/accountsetting" element={<AccountSettingPage />} />
       <Route path="/detail/:id" element={<DetailPage />} />
       <Route path="/search" element={<SearchPage />} />
+      <Route path="/userlain" element={<ProfileUserLainPage/>}/>
       <Route path="/uploadcode" element={<UploadCodePage />} />
       <Route path="/upload" element={<UploadPage />} />
       <Route path="/profile" element={<ProfilePage />}>
         <Route path="/profile" element={<ProfilePost />} />
         <Route path="/profile/about" element={<ProfileAboutPage />} />
       </Route>
-      <Route path="/setting" element={<AccountSettingPage />}>
+      <Route path="/setting" element={<AccountSettingPage />}> //
         <Route index element={<General />} />
         <Route path="general" element={<General />} />
         <Route path="edit" element={<EditProfile />} />
