@@ -14,12 +14,12 @@ function UserStatus() {
       </Link>
       <div>
         <h3>Irham Kamil</h3>
-        <button className="text-[#7868E6]">Follow</button>
+        {/* <button className="text-[#7868E6]">Follow</button> */}
       </div>
-      <button className="flex justify-center items-center  bg-[#7868E6] h-[40px] p-3 rounded-2xl m-3 mx-auto text-white leading-[0.8]">
+      {/* <button className="flex justify-center items-center  bg-[#7868E6] h-[40px] p-3 rounded-2xl m-3 mx-auto text-white leading-[0.8]">
         <BsFillHeartFill className="m-2"/>
         <h3 className="m-2" >Like</h3>
-      </button>
+      </button> */}
     </div>
   );
 }

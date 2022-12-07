@@ -83,7 +83,7 @@ function App() {
         <Route path="/profile" element={<ProfilePost />} />
         <Route path="/profile/about" element={<ProfileAboutPage />} />
       </Route>
-      <Route path="/setting" element={<AccountSettingPage />}> //
+      <Route path="/setting" element={<AccountSettingPage />}>
         <Route index element={<General />} />
         <Route path="general" element={<General />} />
         <Route path="edit" element={<EditProfile />} />

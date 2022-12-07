@@ -7,7 +7,7 @@ function ProfileUser() {
                 <div className="text-black ml-6">
                     <p className="font-bold text-2xl mb-3 mt-5 md:text-3xl md:mt-20">Irham Kamil</p>
                     <p className="text-sm mb-3 ">indonesia</p>
-                    <button className="bg-[#7868E6] h-10 w-40 rounded-md ">Follow</button>
+                    {/* <button className="bg-[#7868E6] h-10 w-40 rounded-md ">Follow</button> */}
                 </div>
         </div>
     )

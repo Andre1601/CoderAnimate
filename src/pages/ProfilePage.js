@@ -21,7 +21,7 @@ function ProfilePage({ authedUser }) {
 
   return (
     <>
-      <div className=" h-full">
+      <div className=" h-screen">
         <HeaderLogin />
         <div className="w-full">
           <ProfileBody />

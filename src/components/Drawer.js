@@ -58,7 +58,7 @@ function Drawer() {
 
         <Link to="/profile">
           <button
-            className="mt-10 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
+            className="mt-5 sm:block duration-500   py-3 px-4 ml-2 rounded-2xl mx-auto text-white text-xl hover:scale-110"
             onClick={showNavbar}
           >
             Profile
@@ -66,7 +66,7 @@ function Drawer() {
         </Link>
         <Link to="/setting/edit">
           <button
-            className="mt-3 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
+             className="mt-5 sm:block duration-500   py-3 px-4 ml-2 rounded-2xl mx-auto text-white text-xl hover:scale-110"
             onClick={showNavbar}
           >
             Edit Profile
@@ -74,7 +74,7 @@ function Drawer() {
         </Link>
         <Link to="/setting/general">
           <button
-            className="mt-3 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
+             className="mt-5 sm:block duration-500   py-3 px-4 ml-2 rounded-2xl mx-auto text-white text-xl hover:scale-110"
             onClick={showNavbar}
           >
             Account Settings
@@ -82,7 +82,7 @@ function Drawer() {
         </Link>
         <Link to="/login">
           <button
-            className="mt-10 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
+             className="mt-5 sm:block duration-500 py-2 px-4 ml-2 rounded-2xl mx-auto text-white text-xl hover:scale-110"
             onClick={showNavbar}
           >
             Sign Out
