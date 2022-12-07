@@ -9,7 +9,6 @@ function UserStatus({ data, post }) {
   React.useEffect(() => {
     if (post || liked) {
       setLiked(post.liked);
-      console.log(liked);
     }
   }, [post, liked]);
 
