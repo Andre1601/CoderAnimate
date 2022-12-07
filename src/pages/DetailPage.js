@@ -3,7 +3,7 @@ import DetailBody from "../components/DetailBody";
 import HeaderLogin from "../components/HeaderLogin";
 import HeaderNotLogin from "../components/HeaderNotLogin";
 
-function DetailPage({ authedUser }) {
+function DetailPage({ authedUser, logout }) {
   
   if (authedUser === null) {
     return (
@@ -16,7 +16,7 @@ function DetailPage({ authedUser }) {
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <DetailBody />
     </>
   );

@@ -1,16 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import img from '../../assets/image/1.png'
+import React, { useState } from "react";
+import { getProject } from "../../utils/network-data";
 
-function Thumbnail() {
+function Thumbnail({ detailHandler, id }) {
+
+  const [dataPost, setDataPost] = useState('');
+
+  React.useEffect(() => {
+    async function getPostData(id) {
+      const { data } = await getProject(id);
+      setDataPost(data)
+    }
+    getPostData(id)
+  },[])
+
   return (
     <div className="relative h-fit">
-      <Link
-        to="/detail"
-        className="title_post flex absolute w-full h-full bg-black/20 text-center items-center z-10 top-[32] opacity-0 transition-all duration-300 rounded-t-2xl "
-      >
-        <h3 className=" text-white text-1xl font-bold mx-auto">Portfolio</h3>
-      </Link>
+      <div className="title_post flex absolute w-full h-full bg-black/20 text-center items-center z-10 top-[32] opacity-0 transition-all duration-300 rounded-t-2xl " onClick={detailHandler}>
+        <h3 className=" text-white text-1xl font-bold mx-auto">{dataPost.title}</h3>
+      </div>
 
       <img
         src="https://source.unsplash.com/600x400"

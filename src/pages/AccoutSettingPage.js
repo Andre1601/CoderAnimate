@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import AccountSettingBody from "../components/AccountSettingBody";
 import HeaderLogin from "../components/HeaderLogin";
 
-function AccountSettingPage() {
+function AccountSettingPage({logout}) {
   const [selected, setSelected] = useState("General");
 
   const location = useLocation();
@@ -12,13 +12,11 @@ function AccountSettingPage() {
     if (location.pathname === '/setting/edit') { setSelected('Edit Profile') }
     else if (location.pathname === '/setting/password') { setSelected('Password') }
     else if (location.pathname === '/setting/password') { setSelected('Social Profiles') }
-
-
   }, []);
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <AccountSettingBody selected={selected} setSelected={setSelected} />
     </>
   );
