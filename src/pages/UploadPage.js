@@ -3,10 +3,10 @@ import HeaderLogin from "../components/HeaderLogin";
 import UploadBody from "../components/UploadBody";
 import FooterPage from "../components/FooterPage";
 
-function UploadPage() {
+function UploadPage({logout}) {
     return (
         <div>
-            <HeaderLogin/>
+            <HeaderLogin logout={logout}/>
             <UploadBody/>
             <FooterPage/>
         </div>

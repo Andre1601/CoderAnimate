@@ -75,7 +75,7 @@ function DetailBody() {
   return (
     <main className="px-5 sm:px-10 ">
       <h2 className="mt-8 text-xl sm:text-3xl">{data.title}</h2>
-      <UserStatus data={dataUser} />
+      <UserStatus data={dataUser} post={data} />
       <Toggle onToggleClick={onTabClick} />
       <Theme onChangeTheme={onThemeChange} />
 

@@ -3,13 +3,13 @@ import ProfileBody from "../components/ProfileBody";
 import FooterPage from "../components/FooterPage";
 import HeaderNotLogin from "../components/HeaderNotLogin";
 
-function ProfilePage({ authedUser }) {
+function ProfilePage({ authedUser, logout }) {
   if (authedUser === null) {
     return (
       <>
 
         <div className="md:h-screen">
-          <HeaderLogin/>
+          <HeaderNotLogin/>
           <div className="w-full">
             <ProfileBody />
           </div>
@@ -21,8 +21,8 @@ function ProfilePage({ authedUser }) {
 
   return (
     <>
-      <div className=" h-full">
-        <HeaderLogin />
+      <div className="h-full sm:h-[100vh]">
+        <HeaderLogin logout={logout} />
         <div className="w-full">
           <ProfileBody />
         </div>

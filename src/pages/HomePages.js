@@ -5,13 +5,13 @@ import HomeBody from "../components/HomeBody";
 import JumbotronHome from "../components/JumbotronHome";
 import { getAllProjects } from "../utils/network-data";
 
-function HomePages({authedUser}) {
+function HomePages({authedUser ,logout}) {
 
   const [projects, setProjects] = useState([]);
 
   React.useEffect(() => {
-    getAllProjects().then(({ data }) => {
-      setProjects(data);
+    getAllProjects().then(({ post }) => {
+      setProjects(post);
     });
   }, []);
 
@@ -28,7 +28,7 @@ function HomePages({authedUser}) {
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <JumbotronHome/>
       <HomeBody projects={projects}/>
     </>

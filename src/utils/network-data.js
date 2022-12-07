@@ -97,8 +97,8 @@ async function getUser(uid) {
   return { error: false, data: responseJson.result };
 }
 
-async function getAllProjects() {
-  const response = await fetchWithToken(`${BASE_URL}/post`);
+async function getProfile(username) {
+  const response = await fetchWithToken(`${BASE_URL}/user/getuser/${username}`);
   const responseJson = await response.json();
 
   if (responseJson.status !== "Success") {
@@ -108,32 +108,23 @@ async function getAllProjects() {
   return { error: false, data: responseJson.result };
 }
 
+async function getAllProjects() {
+  const response = await fetchWithToken(`${BASE_URL}/post`);
+  const responseJson = await response.json();
+
+  if (responseJson.status !== "Success") {
+    return { error: true, data: null };
+  }
+
+  return { error: false, post: responseJson.result };
+}
+
 async function getProject(id) {
   const response = await fetchWithToken(`${BASE_URL}/post/${id}`);
   const responseJson = await response.json();
 
   if (responseJson.message !== "Success") {
     return { error: true, data: null };
-  }
-
-  return { error: false, data: responseJson.result };
-}
-
-async function updateUser({ username, name, email, password, social }) {
-  const response = await fetchWithToken(`${BASE_URL}/user/update`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, name, email, password, social }),
-  });
-
-  const responseJson = await response.json();
-
-
-  if (responseJson.message !== "account was updated") {
-    alert(responseJson.message);
-    return { error: true };
   }
 
   return { error: false, data: responseJson.result };
@@ -239,6 +230,27 @@ async function updateSocial({social}) {
   return { error: false, data: responseJson.result };
 }
 
+
+async function like(id) {
+  const response = await fetchWithToken(`${BASE_URL}/post/like/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }), 
+  });
+
+  const responseJson = await response.json();
+
+
+  if (responseJson.message !== "success") {
+    alert(responseJson.message);
+    return { error: true };
+  }
+
+  return { error: false, data: responseJson.result };
+}
+
 export {
   getAccessToken,
   putAccessToken,
@@ -254,4 +266,6 @@ export {
   verify,
   updatePassword,
   updateSocial,
+  getProfile,
+  like,
 };

@@ -5,7 +5,7 @@ import FooterPage from "../components/FooterPage";
 import { useNavigate } from "react-router-dom";
 import { uploadProject } from "../utils/network-data";
 
-function UploadCodePage() {
+function UploadCodePage({logout}) {
 
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ function UploadCodePage() {
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <UploadCodeBody uploadHandler = {onUploadHandler} />
       <FooterPage />
     </>

@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import AccountSettingBody from "../components/AccountSettingBody";
 import HeaderLogin from "../components/HeaderLogin";
-import { updateUser } from "../utils/network-data";
 
-function AccountSettingPage() {
+function AccountSettingPage({logout}) {
   const [selected, setSelected] = useState("General");
 
   const location = useLocation();
@@ -17,7 +16,7 @@ function AccountSettingPage() {
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <AccountSettingBody selected={selected} setSelected={setSelected} />
     </>
   );

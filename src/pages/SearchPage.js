@@ -5,7 +5,7 @@ import SearchPageBody from "../components/SearchPageBody";
 import HeaderNotLogin from "../components/HeaderNotLogin";
 import Contents from '../components/Contents';
 
-function SearchPage({ authedUser }) {
+function SearchPage({ authedUser, logout }) {
   if (authedUser === null) {
     return (
       <>
@@ -18,7 +18,7 @@ function SearchPage({ authedUser }) {
 
   return (
     <>
-      <HeaderLogin />
+      <HeaderLogin logout={logout} />
       <main>
         <div className="flex flex-col mx-auto py-20 bg-[#FAFAFA] ">
           <div className="w-full px-4">

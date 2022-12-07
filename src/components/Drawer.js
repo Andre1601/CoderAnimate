@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { getUserLogged } from "../utils/network-data";
 import PopupMenu from "./PopupMenu";
 
-function Drawer() {
+function Drawer({logout}) {
   // Untuk Responsive Klik Drawer
   const navRef = useRef();
   const showNavbar = () => {
     navRef.current.classList.toggle("drawer");
   };
+
+  const [userData, setUserData] = useState('');
+
+  React.useEffect(() => {
+    async function getUserData() {
+      const { data } = await getUserLogged()
+      setUserData(data.username)
+
+    }
+    getUserData();
+  }, []);
   // ==============================
   return (
     <>
@@ -18,14 +30,14 @@ function Drawer() {
           <GiHamburgerMenu />
         </button>
         <div className="group">
-          <Link to="/profile">
+          <Link to={`/profile/${userData}`}>
             <img
               alt=""
               src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png"
               className="hidden sm:block w-11 h-11 rounded-full"
             />
           </Link>
-          <PopupMenu />
+          <PopupMenu logout={logout} username={userData} />
         </div>
         <Link to="/upload">
           <button className="hidden sm:block text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white">
@@ -39,7 +51,7 @@ function Drawer() {
         onClick={showNavbar}
         ref={navRef}
       >
-        <Link to="/profile">
+        <Link to={`/profile/${userData}`}>
           <img
             alt=""
             src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png"
@@ -56,7 +68,7 @@ function Drawer() {
           </button>
         </Link>
 
-        <Link to="/profile">
+        <Link to={`/profile/${userData}`}>
           <button
             className="mt-10 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
             onClick={showNavbar}
@@ -80,7 +92,7 @@ function Drawer() {
             Account Settings
           </button>
         </Link>
-        <Link to="/login">
+        <Link to="/login" onClick={logout}>
           <button
             className="mt-10 sm:block duration-500 text-base bg-[#B8B5FF] hover:bg-[#d2d1f3] py-3 px-4 ml-2 rounded-2xl mx-auto text-white"
             onClick={showNavbar}

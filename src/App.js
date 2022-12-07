@@ -16,7 +16,6 @@ import EditProfile from "./components/Setting/EditProfile";
 import Password from "./components/Setting/Password";
 import SocialProfiles from "./components/Setting/SocialProfiles";
 import ProfilePost from "../src/components/profile/ProfilePost";
-import ProfileUserLainPage from "./pages/ProfileUserLainPage";
 import { getUserLogged, putAccessToken } from "./utils/network-data";
 
 function App() {
@@ -58,9 +57,18 @@ function App() {
           />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/*" element={<HomePages authedUser={authedUser} />} />
-          <Route path="/detail/:username" element={<DetailPage authedUser={authedUser} />} />
-          <Route path="/search" element={<SearchPage authedUser={authedUser} />} />
-          <Route path="/profile" element={<ProfilePage authedUser={authedUser} />}>
+          <Route
+            path="/detail/:username"
+            element={<DetailPage authedUser={authedUser} />}
+          />
+          <Route
+            path="/search"
+            element={<SearchPage authedUser={authedUser} />}
+          />
+          <Route
+            path="/profile"
+            element={<ProfilePage authedUser={authedUser} />}
+          >
             <Route path="/profile" element={<ProfilePost />} />
             <Route path="/profile/about" element={<ProfileAboutPage />} />
           </Route>
@@ -71,19 +79,21 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/*" element={<HomePages />} />
-      <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/accountsetting" element={<AccountSettingPage />} />
-      <Route path="/detail/:id" element={<DetailPage />} />
-      <Route path="/search" element={<SearchPage />} />
-      <Route path="/userlain" element={<ProfileUserLainPage/>}/>
-      <Route path="/uploadcode" element={<UploadCodePage />} />
-      <Route path="/upload" element={<UploadPage />} />
-      <Route path="/profile" element={<ProfilePage />}>
-        <Route path="/profile" element={<ProfilePost />} />
-        <Route path="/profile/about" element={<ProfileAboutPage />} />
+      <Route path="/*" element={<HomePages logout={onLogout} />} />
+      {/* <Route path="/forgotpassword" element={<ForgotPassword logout={onLogout} />} /> */}
+      <Route path="/detail/:id" element={<DetailPage logout={onLogout} />} />
+      <Route path="/search" element={<SearchPage logout={onLogout} />} />
+      <Route
+        path="/uploadcode"
+        element={<UploadCodePage logout={onLogout} />}
+      />
+      <Route path="/upload" element={<UploadPage logout={onLogout} />} />
+      <Route path="/profile" element={<ProfilePage logout={onLogout} />}>
+        <Route index element={<ProfilePost />} />
+        <Route path=":username" element={<ProfilePost />} />
+        <Route path="about/:username" element={<ProfileAboutPage />} />
       </Route>
-      <Route path="/setting" element={<AccountSettingPage />}> //
+      <Route path="/setting" element={<AccountSettingPage logout={onLogout} />}>
         <Route index element={<General />} />
         <Route path="general" element={<General />} />
         <Route path="edit" element={<EditProfile />} />
