@@ -19,7 +19,7 @@ const ProfileBody = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <ProfileUser dataUser={dataUser}/>
       <ProfileCollection dataUser={dataUser} />
     </div>
