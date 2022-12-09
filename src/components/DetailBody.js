@@ -10,13 +10,13 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { javascript } from "@codemirror/lang-javascript";
 import { getProject, getUser } from "../utils/network-data";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function DetailBody() {
   const [openedEditor, setOpenedEditor] = useState("html");
 
-  const [dataUser, setDataUser] = useState('');
-  const [data, setData] = useState('');
+  const [dataUser, setDataUser] = useState("");
+  const [data, setData] = useState("");
 
   const [isHtml, setHtml] = useState("");
   const [isCss, setCss] = useState("");
@@ -27,26 +27,22 @@ function DetailBody() {
 
   async function getUserData(uid) {
     const { data } = await getUser(uid);
-    setDataUser(data)
+    setDataUser(data);
   }
 
-  let {id} = useParams();
-
+  let { id } = useParams();
 
   React.useEffect(() => {
     async function getProjectData(id) {
       const { data } = await getProject(id);
-      setHtml(data.code[0].code)
-      setCss(data.code[1].code)
-      setJs(data.code[2].code)
-      setData(data)
-      getUserData(data.uid)
-
+      setHtml(data.code[0].code);
+      setCss(data.code[1].code);
+      setJs(data.code[2].code);
+      setData(data);
+      getUserData(data.uid);
     }
-    getProjectData(id)
-
-  }, [])
-
+    getProjectData(id);
+  }, []);
 
   const onTabClick = (editorName) => {
     setOpenedEditor(editorName);
@@ -109,9 +105,11 @@ function DetailBody() {
 
       <OutputDisplay srcDoc={srcDoc} />
       <Description data={data} />
-      <button className="hidden sm:block bg-[#7868E6] px-9 py-2 mb-10 text-white rounded-2xl">
-        Back
-      </button>
+      <Link to='/'>
+        <button className="hidden sm:block bg-[#7868E6] px-9 py-2 mb-10 text-white rounded-2xl">
+          Back
+        </button>
+      </Link>
     </main>
   );
 }

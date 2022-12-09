@@ -14,7 +14,7 @@ function JumbotronHome() {
           thousands of designs here
         </h2>
         <Search />
-        <LatestSearch />
+        {/* <LatestSearch /> */}
       </div>
     </div>
   );

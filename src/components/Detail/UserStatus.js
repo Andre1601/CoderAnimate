@@ -29,7 +29,7 @@ function UserStatus({ data, post }) {
         <h3>{data.name}</h3>
         {/* <button className="text-[#7868E6]">Follow</button> */}
       </div>
-      {!liked.includes(data.username) ? (
+      {/* {!liked.includes(data.username) ? (
         <button
           className="flex justify-center items-center  bg-[#7868E6] h-[40px] p-3 rounded-2xl m-3 mx-auto text-white leading-[0.8]"
           onClick={likedPost}
@@ -45,7 +45,7 @@ function UserStatus({ data, post }) {
           <BsFillHeartFill className="m-2" />
           <h3 className="m-2">Unlike</h3>
         </button>
-      )}
+      )} */}
 
     </div>
   );

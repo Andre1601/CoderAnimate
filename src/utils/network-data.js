@@ -87,7 +87,7 @@ async function uploadProject({ title, description, tags, code }) {
 }
 
 async function getUser(uid) {
-  const response = await fetchWithToken(`${BASE_URL}/user/${uid}`);
+  const response = await fetch(`${BASE_URL}/user/${uid}`);
   const responseJson = await response.json();
 
   if (responseJson.status !== "Success") {
@@ -98,7 +98,7 @@ async function getUser(uid) {
 }
 
 async function getProfile(username) {
-  const response = await fetchWithToken(`${BASE_URL}/user/getuser/${username}`);
+  const response = await fetch(`${BASE_URL}/user/getuser/${username}`);
   const responseJson = await response.json();
 
   if (responseJson.status !== "Success") {
@@ -109,7 +109,7 @@ async function getProfile(username) {
 }
 
 async function getAllProjects() {
-  const response = await fetchWithToken(`${BASE_URL}/post`);
+  const response = await fetch(`${BASE_URL}/post`);
   const responseJson = await response.json();
 
   if (responseJson.status !== "Success") {
@@ -120,7 +120,7 @@ async function getAllProjects() {
 }
 
 async function getProject(id) {
-  const response = await fetchWithToken(`${BASE_URL}/post/${id}`);
+  const response = await fetch(`${BASE_URL}/post/${id}`);
   const responseJson = await response.json();
 
   if (responseJson.message !== "Success") {

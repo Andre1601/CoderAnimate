@@ -21,7 +21,7 @@ function CardItem({id, uid}) {
     navigate(`/detail/${id}`);
   }
   return (
-    <div className="card w-[350px] h-full rounded-2xl overflow-hidden shadow-lg mx-auto ">
+    <div className="card w-[350px] h-[280px] rounded-2xl overflow-hidden shadow-lg mx-auto ">
         <Thumbnail id={id} detailHandler={onDetailHandler} />
         <Detail dataUser={dataUser} />
 
