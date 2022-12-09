@@ -8,7 +8,7 @@ function UploadPage({logout}) {
         <div>
             <HeaderLogin logout={logout}/>
             <UploadBody/>
-            <FooterPage/>
+            {/* <FooterPage/> */}
         </div>
     )
 }

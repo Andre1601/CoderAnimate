@@ -64,13 +64,7 @@ function SearchPage({ authedUser, logout }) {
         </div>
         <div className=" grid lg:grid-cols-3 gap-2 aspect-[4/3] sm:grid-cols-1 md:grid-cols-2 pt-16">
           <Contents />
-          <Contents />
-          <Contents />
-          <Contents />
-          <Contents />
-          <Contents />
-          <Contents />
-          <Contents />
+       
         </div>
       </main>
       <FooterPage/>

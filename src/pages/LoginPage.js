@@ -2,7 +2,6 @@ import React from "react";
 import HeaderLoginPage from "../components/HeaderLoginPage";
 import LoginBody from "../components/LoginBody";
 import LoginImage from "../assets/image/login.png";
-import FooterPage from "../components/FooterPage";
 import { login } from "../utils/network-data";
 
 function LoginPage({ loginSuccess }) {

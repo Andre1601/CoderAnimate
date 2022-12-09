@@ -33,7 +33,6 @@ function ProfileSocial({ data }) {
       <div className="ml-5 max-w-sm md:w-72 bg-slate-400 rounded-lg p-4 mt-5 m-3">
         <div className="flex mb-2">
           <GrLocationPin className="mx-2" />
-          <p className="text-sm"> {data.location || "Indonesia"} </p>
         </div>
 
         <div className="flex">

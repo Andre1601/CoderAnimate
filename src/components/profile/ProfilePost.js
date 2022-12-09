@@ -3,6 +3,7 @@ import img from "../../assets/image/Profile.png";
 import { Link, useParams } from "react-router-dom";
 import { getAllProjects, getProfile } from "../../utils/network-data";
 import CardItem from "../CardItem";
+import FooterPage from "../FooterPage";
 function ProfilePost() {
   const [posts, setPosts] = useState('');
 
@@ -42,11 +43,13 @@ function ProfilePost() {
 }
 
 return (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-0 py-5 gap-y-4">
+  <>
+  <div className=" md:relative md:right-[161px] my-auto w-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-0 py-5 gap-y-4">
     {posts.map((post) => {
-      return <CardItem key={post.id} {...post} />;
+      return <CardItem className key={post.id} {...post} />;
     })}
   </div>
+  </>
 );
 
 }

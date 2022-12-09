@@ -16,7 +16,7 @@ function ProfileUser({dataUser}) {
           {dataUser.name}
         </p>
         <p className="text-sm mb-3 ">{dataUser.location}</p>
-        <button className="bg-[#7868E6] h-10 w-40 rounded-md ">Follow</button>
+        {/* <button className="bg-[#7868E6] h-10 w-40 rounded-md ">Follow</button> */}
       </div>
     </div>
   );

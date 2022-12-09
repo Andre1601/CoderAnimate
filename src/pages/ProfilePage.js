@@ -8,13 +8,10 @@ function ProfilePage({ authedUser, logout }) {
     return (
       <>
 
-        <div className="md:h-screen">
+        <div>
           <HeaderNotLogin/>
-          <div className="w-full">
             <ProfileBody />
-          </div>
         </div>
-        <FooterPage />
       </>
     );
   }
@@ -26,8 +23,8 @@ function ProfilePage({ authedUser, logout }) {
         <div className="w-full">
           <ProfileBody />
         </div>
+        {/* <FooterPage/> */}
       </div>
-      <FooterPage />
     </>
   );
 }
